@@ -1,8 +1,7 @@
-import React from 'react'
 
 function App() {
   return (
-    <div>Welcome to ProShop</div>
+    <button>Welcome to ProShop</button>
   )
 }
 
