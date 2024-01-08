@@ -1,3 +1,8 @@
+MERN Stack App 2024.
+
+----------
+# Frontend
+
 Router:
 React Router Provider has changed a few things.
 Now it uses an outlet.
@@ -6,3 +11,6 @@ Theme:
 We're using github dark theme
 
 UI: using react-bootstrap, custom bootstrap and react-icons 
+
+---------
+# Backend
