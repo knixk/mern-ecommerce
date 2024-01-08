@@ -4,7 +4,7 @@ import Footer from "./components/Footer";
 import Product from "./components/Product";
 import { Container } from "react-bootstrap";
 
-function App() {
+function App() {  
   return (
     <>
       <Header />
