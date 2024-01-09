@@ -1,14 +1,24 @@
 import { Link, useParams } from "react-router-dom";
 import { Row, Col, Image, ListGroup, Card, Button } from "react-bootstrap";
 import Rating from "../components/Rating";
-import products from "../products";
+import axios from "axios";
+import { useState, useEffect } from "react";
 
 const ProductScreen = () => {
+
+  const [product, setProduct] = useState([]);
+
   const { id: productId } = useParams();
 
-  const product = products.find((p) => p._id === productId);
+  useEffect(() => {
+    const fetchProducts = async () => {
+      const { data } = await axios.get(`/api/product/${productId}`);
+      setProduct(data);  
+    };
 
-  console.log(product);
+    fetchProducts();
+  }, [productId]);
+
 
   return (
     <>
@@ -52,12 +62,18 @@ const ProductScreen = () => {
                 <Row>
                   <Col>Status:</Col>
                   <Col>
-                    <strong>{product.countInStock > 0 ? 'In Stock' : 'Out of Stock'}</strong>
+                    <strong>
+                      {product.countInStock > 0 ? "In Stock" : "Out of Stock"}
+                    </strong>
                   </Col>
                 </Row>
               </ListGroup.Item>
               <ListGroup.Item>
-                <Button className="btn-block" type="button" disabled={product.countInStock === 0}>
+                <Button
+                  className="btn-block"
+                  type="button"
+                  disabled={product.countInStock === 0}
+                >
                   Add To Cart
                 </Button>
               </ListGroup.Item>
