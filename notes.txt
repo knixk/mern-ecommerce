@@ -17,3 +17,8 @@ UI: using react-bootstrap, custom bootstrap and react-icons
 
 1. Always remember to proxy your request based on your backend url.
 The axios req at frontend doesn't depend on the URL of ur client at all.
+
+---------
+# ApiSlice
+
+1. Essentially, it's helping us to bring data to our frontend, without any axios requests.
